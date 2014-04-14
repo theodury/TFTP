@@ -6,12 +6,16 @@
 
 package tftp;
 
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
 /**
  *
  * @author TD
  */
 public class TFTP {
-
+    
     /**
      * @param args the command line arguments
      */
