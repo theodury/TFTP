@@ -48,7 +48,7 @@ public class Client {
             dtgp = new DatagramPacket(data, data.length); // prépare le réception
             dtgs.receive(dtgp);
             String adrDed = new String(dtgp.getData());
-            System.out.println("Après retour, data : " + new String(dtgp.getData())); //affiche ce qui a été envoyé et renvoyé
+            //boucle d'envoie ou de réception
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
