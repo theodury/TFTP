@@ -1,5 +1,6 @@
 package model;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -261,17 +263,17 @@ public class FileTransferManager extends Observable {
 			stream.read(data, 0, byteCount);
 		} else if (mode == Protocol.Mode.NETASCII) {
 
-			//byte[] buf = new byte[byteCount/2];
-			//char[] cbuf = new char[byteCount/2];
+			byte[] buf = new byte[byteCount/2];
+			char[] cbuf = new char[byteCount/2];
 
-			/*stream.read(buf, 0, byteCount/2);
-			 data = new String(buf, "UTF-8").getBytes("UTF-8);*/
-			stream.read(data, 0, byteCount);
-			/*InputStreamReader ipsr=new InputStreamReader(stream);
+			stream.read(buf, 0, byteCount/2);
+			//data = new String(buf, "UTF-8").getBytes("UTF-8);
+			//stream.read(data, 0, byteCount);
+			 InputStreamReader ipsr=new InputStreamReader(stream);
 			 BufferedReader br=new BufferedReader(ipsr);
 			 br.read(cbuf, 0, byteCount/2);
 			 String str = new String(cbuf);
-			 data = str.getBytes("US-ASCII");*/
+			 //data = str.getBytes("US-ASCII");
 		}
 	}
 }

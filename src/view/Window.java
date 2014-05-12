@@ -49,29 +49,29 @@ public final class Window extends JFrame implements Observer, ActionListener {
 		_controller = new Controller(this);
 		//Gestion send
 
-		_btn_Send = new JButton("Send");
+		_btn_Send = new JButton("Envoyer");
 		_btn_Send.addActionListener(this);
 
-		_btn_ChooseFile = new JButton("Choose");
+		_btn_ChooseFile = new JButton("Choisir");
 		_btn_ChooseFile.addActionListener(this);
 
-		_lbl_LocationSend = new JLabel("Location on your computer :");
-		_lbl_IPSend = new JLabel("Server's IP :");
-		_lbl_ServerSend = new JLabel("Location on the server :");
+		_lbl_LocationSend = new JLabel("Localisation sur l'ordinateur :");
+		_lbl_IPSend = new JLabel("Serveur IP :");
+		_lbl_ServerSend = new JLabel("Localisation sur le serveur :");
 
-		_lbl_LocationReceive = new JLabel("Location on your computer :");
-		_lbl_IPReceive = new JLabel("Server's IP :");
-		_lbl_ServerReceive = new JLabel("Location on the server :");
+		_lbl_LocationReceive = new JLabel("Localisation sur l'ordinateur :");
+		_lbl_IPReceive = new JLabel("Serveur IP :");
+		_lbl_ServerReceive = new JLabel("Localisation sur le serveur :");
 
 		_txt_PathSend = new JTextField(10);
 		_txt_PathServerSend = new JTextField(20);
 		_txt_IPSend = new JTextField(20);
 
 		//Gestion receive
-		_btn_Receive = new JButton("Receive");
+		_btn_Receive = new JButton("Recevoir");
 		_btn_Receive.addActionListener(this);
 
-		_btn_ChooseDownloadFile = new JButton("Choose");
+		_btn_ChooseDownloadFile = new JButton("Choisir");
 		_btn_ChooseDownloadFile.addActionListener(this);
 
 		_txt_PathReceive = new JTextField(10);
@@ -82,7 +82,7 @@ public final class Window extends JFrame implements Observer, ActionListener {
 		//Gestion fenetre & layout
 		JPanel total = new JPanel();
 		total.setLayout(new BorderLayout());
-		this.setTitle("Connexion to TFTP server");
+		this.setTitle("Connexion au serveur TFTP ");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -144,8 +144,8 @@ public final class Window extends JFrame implements Observer, ActionListener {
 
 
 		JTabbedPane panel = new JTabbedPane();
-		panel.addTab("Send", formSend);
-		panel.addTab("Download", formReceive);
+		panel.addTab("Envoyer", formSend);
+		panel.addTab("Recevoir", formReceive);
 
 		total.add(panel, BorderLayout.NORTH);
 		_textArea = new TextArea();
@@ -158,7 +158,7 @@ public final class Window extends JFrame implements Observer, ActionListener {
 		main.add(total, BorderLayout.CENTER);
 		main.setBackground(Color.GRAY);
 
-		this.setMinimumSize(new Dimension(394, 300));
+		this.setMinimumSize(new Dimension(500, 400));
 		this.setContentPane(main);
 		this.setFocusable(true);
 		//this.setResizable(false);
